@@ -1,6 +1,6 @@
 (function(window, angular, $) {
     'use strict';
-    angular.module('FileManager', ['pascalprecht.translate']);
+    angular.module('FileManager', ['pascalprecht.translate'] );
 
     /**
      * jQuery inits
@@ -45,5 +45,5 @@
             return undefined;
         };
     }
- 
+
 })(window, angular, jQuery);

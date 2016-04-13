@@ -1,7 +1,7 @@
 (function(angular, $) {
     'use strict';
-    angular.module('FileManager').service('apiHandler', ['$http', '$q', '$window', '$translate',
-        function ($http, $q, $window, $translate) {
+    angular.module('FileManager').service('apiHandler', ['$http', '$q', '$window', '$translate', 'FileSaver' , 'Blob' ,
+        function ($http, $q, $window, $translate , FileSaver , Blob) {
 
         $http.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
         $http.defaults.headers.common['API_BASE'] = 'Rest';
@@ -214,15 +214,14 @@
 
 
             //!$window.saveAs && $window.console.error('Your browser dont support ajax download, downloading by default');
-            window.open(url, '_blank', '');
-
-
             var deferred = $q.defer();
             self.inprocess = true;
             $http.get(url).success(function(data) {
-                var bin = new $window.Blob([data]);
+                //var bin = new $window.Blob([data]);
+                var blobData = new Blob([data], { type: 'application/pdf;charset=utf-8' });
                 deferred.resolve(data);
-                $window.saveAs(bin, toFilename);
+                FileSaver.saveAs(blobData, toFilename);
+                //window.saveAs(bin, toFilename);
             }).error(function(data) {
                 self.deferredHandler(data, deferred, $translate.instant('error_downloading'));
             })['finally'](function() {
