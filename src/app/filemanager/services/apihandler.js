@@ -349,6 +349,24 @@
             return deferred.promise;
         };
 
+        ApiHandler.prototype.getProperties = function(apiUrl, item) {
+            var self = this;
+            var deferred = $q.defer();
+
+            self.inprocess = true;
+            self.error = '';
+
+            $http.get(apiUrl + '/' + item.model.id).success(function(data) {
+                self.deferredHandler(data, deferred);
+            }).error(function(data) {
+                self.deferredHandler(data, deferred, $translate.instant('error_getting_properties'));
+            })['finally'](function() {
+                self.inprocess = false;
+            });
+
+            return deferred.promise;
+        };
+
         return ApiHandler;
 
     }]);
