@@ -1,7 +1,7 @@
 (function(angular) {
     'use strict';
     angular.module('FileManager')
-    .constant('SPRING_API', 'http://127.0.0.1:8080')
+    .constant('SPRING_API', 'http://10.76.133.2:8080/ILS')
     .provider('fileManagerConfig', function(SPRING_API) {
 
         var values = {
@@ -21,6 +21,7 @@
             extractUrl: SPRING_API + '/api/extractUrl',
             searchUrl: SPRING_API + '/api/searchDocumentByName',
             permissionsUrl: SPRING_API + '/api/permissionsUrl',
+            getPropertiesUrl: SPRING_API + '/api/getProperties',
 
             searchForm: true,
             sidebar: true,
@@ -36,7 +37,8 @@
                 extract: true,
                 download: true,
                 preview: true,
-                remove: true
+                remove: true,
+                showProperties: true
             },
 
             showSizeForDirectories: false,

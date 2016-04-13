@@ -138,9 +138,12 @@
             return this.apiHandler.createFolder(fileManagerConfig.createFolderUrl, item);
         };
 
-
         ApiMiddleware.prototype.search = function(search) {
             return this.apiHandler.search(fileManagerConfig.searchUrl ,  search);
+        };
+
+        ApiMiddleware.prototype.getProperties = function(item){
+            return this.apiHandler.getProperties(fileManagerConfig.getPropertiesUrl, item)
         };
 
         return ApiMiddleware;
