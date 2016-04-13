@@ -13,6 +13,7 @@
             this.history = [];
             this.error = '';
             this.folderId = '' ;
+            this.search = '' ;
         };
 
         FileNavigator.prototype.deferredHandler = function(data, deferred, defaultMsg) {
@@ -49,6 +50,7 @@
 
             self.requesting = true;
             self.fileList = [];
+            self.modalFileList = [];
             self.error = '';
 
             $http.post(fileManagerConfig.listUrl , data).success(function(data) {

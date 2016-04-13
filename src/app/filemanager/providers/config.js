@@ -19,6 +19,7 @@
             downloadFileUrl: SPRING_API + '/api/document/content',
             compressUrl: SPRING_API + '/api/compressUrl',
             extractUrl: SPRING_API + '/api/extractUrl',
+            searchUrl: SPRING_API + '/api/searchDocumentByName',
             permissionsUrl: SPRING_API + '/api/permissionsUrl',
 
             searchForm: true,

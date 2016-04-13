@@ -12,6 +12,9 @@
     <div id="navbar" class="navbar-collapse collapse">
       <div class="navbar-form navbar-right">
         <input type="text" class="form-control input-sm" ng-show="config.searchForm" placeholder="{{'search' | translate}}..." ng-model="$parent.query">
+        <button class="btn btn-default btn-sm" ng-click="modal('search') ">
+            <i class="glyphicon glyphicon-plus"></i> {{"search" | translate}}
+        </button>
         <button class="btn btn-default btn-sm" ng-click="modal('newfolder') && prepareNewFolder()">
             <i class="glyphicon glyphicon-plus"></i> {{"new_folder" | translate}}
         </button>

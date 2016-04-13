@@ -349,6 +349,25 @@
             return deferred.promise;
         };
 
+
+        ApiHandler.prototype.search = function(apiUrl , search) {
+            var self = this;
+            var deferred = $q.defer();
+            self.inprocess = true;
+            self.error = '';
+            apiUrl = apiUrl + "/" + search ;
+            $http.get(apiUrl).success(function(data) {
+                self.deferredHandler(data, deferred);
+                //self.deferredHandler(data, deferred);
+            }).error(function(data) {
+                //self.deferredHandler(data, deferred, $translate.instant('error_searching'));
+            })['finally'](function() {
+                self.inprocess = false;
+            });
+
+            return deferred.promise;
+        };
+
         return ApiHandler;
 
     }]);

@@ -19,6 +19,7 @@
         $scope.uploadFileList = [];
         $scope.viewTemplate = $storage.getItem('viewTemplate') || 'main-table.html';
         $scope.fileList = [];
+        $scope.modalFileList = [];
         $scope.temps = [];
 
         $scope.base_api = 'Rest';
@@ -320,6 +321,19 @@
                 $scope.modal('newfolder', true);
             });
         };
+
+        $scope.search = function() {
+            var search = $scope.fileNavigator.search ;
+            console.log("yalla " + search) ;
+            $scope.apiMiddleware.search(search).then(function(data) {
+              console.log(data.result);
+              $scope.fileNavigator.modalFileList = (data.result || []).map(function(file) {
+                  return new Item(file, $scope.fileNavigator.currentPath);
+              });
+              //$scope.fileNavigator.refresh();
+            });
+
+        }
 
         $scope.uploadFiles = function() {
             $scope.apiMiddleware.upload($scope.uploadFileList, $scope.fileNavigator.currentPath).then(function() {
