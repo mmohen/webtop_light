@@ -27,7 +27,6 @@
         $scope.setApiBase = function(API_Base){
             $scope.base_api = API_Base;
             $scope.apiMiddleware.setApiBase(API_Base);
-            console.log($http.defaults.headers);
         };
 
         $scope.$watch('temps', function() {
@@ -140,6 +139,16 @@
             if (item.isEditable()) {
                 return $scope.openEditItem(item);
             }
+        };
+
+        $scope.showProperties = function() {
+            var item = $scope.singleSelection();
+            $scope.apiMiddleware.apiHandler.inprocess = true;
+            $scope.modal('properties', null, true);
+            $scope.apiMiddleware.getProperties(item).then(function(response){
+                $scope.properties = response;
+                $scope.apiMiddleware.apiHandler.inprocess = false;
+            });
         };
 
         $scope.openImagePreview = function() {

@@ -77,6 +77,7 @@
             error_getting_content: 'An error occurred getting the content of the file',
             error_changing_perms: 'An error occurred changing the permissions of the file',
             error_uploading_files: 'An error occurred uploading files',
+            error_getting_properties: 'An error occurred getting the properties',
             sure_to_start_compression_with: 'Are you sure to compress',
             owner: 'Owner',
             group: 'Group',
@@ -90,7 +91,11 @@
             preview: 'Item preview',
             open: 'Open',
             these_elements: 'these {{total}} elements',
-            new_folder: 'New folder'
+            new_folder: 'New folder',
+            properties: 'Properties',
+            displaying_properties_for: 'Displaying the properties for',
+            display_name: 'Display name',
+            value: 'Value'
         });
 
         $translateProvider.translations('he', {
