@@ -1,7 +1,15 @@
-node_modules/
-bower_components/
-coverage/
-.sass-cache/
-.idea/
-.tmp/
-dist/
+file manager/node_modules/
+file manager/bower_components/
+file manager/coverage/
+file manager/.sass-cache/
+file manager/.idea/
+file manager/.tmp/
+file manager/dist/
+
+pdf viewer/node_modules/
+pdf viewer/bower_components/
+pdf viewer/coverage/
+pdf viewer/.sass-cache/
+pdf viewer/.idea/
+pdf viewer/.tmp/
+pdf viewer/dist/
