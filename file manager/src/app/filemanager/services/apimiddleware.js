@@ -82,6 +82,15 @@
             return this.apiHandler.getUrl(fileManagerConfig.downloadFileUrl, item);
         };
 
+        ApiMiddleware.prototype.checkIn = function(item) {
+            return this.apiHandler.checkIn(fileManagerConfig.checkIn, item);
+        };
+
+        ApiMiddleware.prototype.checkOut = function(item) {
+            //return this.apiHandler.checkOut(fileManagerConfig.editUrl, item.tempModel.content);
+            return this.apiHandler.checkOut(fileManagerConfig.checkOut, item , item.tempModel.content);
+        };
+
         ApiMiddleware.prototype.download = function(item, forceNewWindow) {
             //TODO: add spinner to indicate file is downloading
             //var itemPath = this.getFilePath(item);

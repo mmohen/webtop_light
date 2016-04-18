@@ -349,6 +349,45 @@
             return deferred.promise;
         };
 
+        ApiHandler.prototype.checkIn = function(apiUrl, item) {
+            var self = this;
+            var deferred = $q.defer();
+            apiUrl = apiUrl + "/"  +  item.tempModel.id ;
+            console.log(apiUrl) ;
+            var data = {};
+            self.inprocess = true;
+            self.error = '';
+            $http.post(apiUrl, data).success(function(data) {
+                self.deferredHandler(data, deferred);
+            }).error(function(data) {
+                self.deferredHandler(data, deferred, $translate.instant('error_check_in_document'));
+            })['finally'](function() {
+                self.inprocess = false;
+            });
+            return deferred.promise;
+        };
+
+        ApiHandler.prototype.checkOut = function(apiUrl, item , content) {
+            var self = this;
+            var deferred = $q.defer();
+            /*var data = {
+              content : content ;
+            };*/
+            apiUrl = apiUrl + "/"  + item.tempModel.id ;
+            console.log(apiUrl) ;
+            var data = {};
+            self.inprocess = true;
+            self.error = '';
+            $http.post(apiUrl, data).success(function(data) {
+                self.deferredHandler(data, deferred);
+            }).error(function(data) {
+                self.deferredHandler(data, deferred, $translate.instant('error_check_out_document'));
+            })['finally'](function() {
+                self.inprocess = false;
+            });
+            return deferred.promise;
+        };
+
 
         ApiHandler.prototype.search = function(apiUrl , search) {
             var self = this;

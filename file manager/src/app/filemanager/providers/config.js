@@ -22,6 +22,8 @@
             searchUrl: SPRING_API + '/api/searchDocumentByName',
             permissionsUrl: SPRING_API + '/api/permissionsUrl',
             getPropertiesUrl: SPRING_API + '/api/getProperties',
+            checkIn: SPRING_API + '/api/checkin',
+            checkOut: SPRING_API + '/api/checkout',
 
             searchForm: true,
             sidebar: true,

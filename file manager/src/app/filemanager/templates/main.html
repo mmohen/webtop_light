@@ -10,7 +10,7 @@
                <div ng-include="config.tplPath + '/' + viewTemplate" class="main-navigation clearfix"></div>
             </div>
             <div class="pdfviewercon" ng-class="{ 'hidden-sm hidden-xs hidden-md hidden-lg hidden-xl' : !sliderOpen, 'col-md-7': sliderOpen }">
-                <a href="#" class="btn-close btn btn-link" ng-class="{ 'hide' : !showClose}" ng-mouseover="showClose = true;" ng-click="sliderOpen = !sliderOpen">X</a>
+                <a href="#" class="btn-close btn btn-link" ng-class="{ 'hide' : !showClose}" ng-mouseover="showClose = true;" ng-click="closeViewer()">X</a>
                 <iframe height="100%" width="100%" ng-src="{{PDF_VIEWER_URL}}" ng-mouseover="showClose = true;" ng-mouseleave="showClose = false;"></iframe>
             </div>
         </div>

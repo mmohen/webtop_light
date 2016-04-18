@@ -228,6 +228,28 @@
             return $scope.apiMiddleware.downloadMultiple($scope.temps);
         };
 
+        $scope.checkIn = function() {
+            console.log("check in")
+            var item = $scope.singleSelection();
+            if ($scope.selectionHas('dir')) {
+                return;
+            }
+            if (item) {
+                return $scope.apiMiddleware.checkIn(item);
+            }
+        };
+
+        $scope.checkOut = function() {
+            console.log("check out")
+            var item = $scope.singleSelection();
+            if ($scope.selectionHas('dir')) {
+                return;
+            }
+            if (item) {
+                return $scope.apiMiddleware.checkOut(item);
+            }
+        };
+
         $scope.copy = function() {
             var item = $scope.singleSelection();
             if (item) {
