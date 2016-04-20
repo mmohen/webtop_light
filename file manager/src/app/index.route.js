@@ -1,14 +1,12 @@
 (function() {
   'use strict';
-
   angular
     .module('FileManager')
-    .constant('PDF_VIEWER_URL', 'http://127.0.0.1:3002')
+    .constant('PDF_VIEWER_URL', location.protocol + '//' + location.hostname + ':3002')
     .config(routerConfig);
 
   /** @ngInject */
   function routerConfig($stateProvider, $urlRouterProvider, $sceDelegateProvider ,$locationProvider) {
-
     // Browser Support?
     if(window.history && window.history.pushState){
       $locationProvider.html5Mode({

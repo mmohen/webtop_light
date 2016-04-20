@@ -19,12 +19,12 @@
 
     $stateProvider
       .state('home', {
-        url: '/:id',
+        url: '/:id?api',
         templateUrl: 'app/pdfviewer/templates/main.html',
         controller: 'pdfViewerController',
         resolve: {
           pdfBlobUrl: function ($stateParams, pdfService) {
-            return pdfService.openDocument($stateParams.id).then(function(response){ return response; });
+            return pdfService.openDocument($stateParams.id, $stateParams.api).then(function(response){ return response; });
           }
         }
       });

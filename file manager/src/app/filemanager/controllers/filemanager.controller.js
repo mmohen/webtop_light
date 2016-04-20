@@ -24,11 +24,12 @@
         $scope.modalFileList = [];
         $scope.temps = [];
         $scope.sliderOpen = false;
+        $scope.base_api = 'Rest';
 
         $scope.openPdfDocument = function(id){
             $scope.sliderOpen = true;
             $scope.showClose = false;
-            $scope.PDF_VIEWER_URL = PDF_VIEWER_URL + '/' + id;
+            $scope.PDF_VIEWER_URL = PDF_VIEWER_URL + '/' + id + '?api=' + $scope.base_api;
         }
 
         $scope.closeViewer = function(){
@@ -36,8 +37,6 @@
             $scope.showClose = false;
             $scope.PDF_VIEWER_URL = '';
         }
-
-        $scope.base_api = 'Rest';
 
         $scope.setApiBase = function(API_Base){
             $scope.base_api = API_Base;

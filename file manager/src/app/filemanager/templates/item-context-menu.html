@@ -13,17 +13,17 @@
             </a>
         </li>
 
-        <li ng-show="!selectionHas('dir') && singleSelection()">
+<!--         <li ng-show="!selectionHas('dir') && singleSelection()">
             <a href="" tabindex="-1" ng-click="checkIn()">
-                <i class="glyphicon glyphicon-cloud-download"></i> {{'check In' | translate}}
+                <i class="material-icons">lock_open</i> {{'check_in' | translate}}
             </a>
         </li>
 
         <li ng-show=" !selectionHas('dir') && singleSelection()">
             <a href="" tabindex="-1" ng-click="checkOut()">
-                <i class="glyphicon glyphicon-cloud-download"></i> {{'checkOut' | translate}}
+                <i class="material-icons">vpn_key</i> {{'check_out' | translate}}
             </a>
-        </li>
+        </li> -->
 
         <li ng-show="config.allowedActions.download && !selectionHas('dir') && singleSelection()">
             <a href="" tabindex="-1" ng-click="download()">
