@@ -50,7 +50,7 @@
                     {{item.model.name | strLimit : 64}}
                 </a>
 
-                <a ng-click="openPdfDocument(item.model.id)" ng-show="item.model.type === 'file' && item.isPdf()" href="" title="{{item.model.name}} ({{item.model.size | humanReadableFileSize}})">
+                <a class="clickable-link" ng-click="openPdfDocument(item.model.id)" ng-show="item.model.type === 'file' && item.isPdf()" href="" title="{{item.model.name}} ({{item.model.size | humanReadableFileSize}})">
                     <i class="glyphicon glyphicon-file" ></i>
                     {{item.model.name | strLimit : 64}}
                 </a>

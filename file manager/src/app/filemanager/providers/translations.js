@@ -95,7 +95,9 @@
             properties: 'Properties',
             displaying_properties_for: 'Displaying the properties for',
             display_name: 'Display name',
-            value: 'Value'
+            value: 'Value',
+            check_in: 'Check In',
+            check_out:'Check Out'
         });
 
         $translateProvider.translations('he', {

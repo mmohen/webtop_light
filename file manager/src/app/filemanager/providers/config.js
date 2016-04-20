@@ -1,7 +1,7 @@
 (function(angular) {
     'use strict';
     angular.module('FileManager')
-    .constant('SPRING_API', 'http://10.76.133.2:8080/ILS')
+    .constant('SPRING_API', 'http://10.76.135.20:8080/ILS-dev')
     .provider('fileManagerConfig', function(SPRING_API) {
 
         var values = {

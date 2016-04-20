@@ -97,3 +97,7 @@ section.jumbotron h1 {
   right: 45px;
   top: 50px;
 }
+
+.clickable-link{
+  display: block;
+}
