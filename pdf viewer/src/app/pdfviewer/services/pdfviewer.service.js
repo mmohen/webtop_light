@@ -27,15 +27,15 @@
                 var blob = new Blob(byteArrays, {type: contentType});
                 return blob;
             },
-            'openDocument': function(id){
+            'openDocument': function(id , api){
                 var deferred = $q.defer();
-                $http.get(SPRING_API + '/api/document/open/' + id)
+                $http.get(SPRING_API + '/api/document/open/' + id , {headers: {'API_BASE': api}})
                 .success(function(response){
                     var pdfContent = response.data,
                         contentType = 'data:application/pdf;base64, ',
                         blob = self.base64ToBlob(pdfContent, contentType),
                         blobUrl = URL.createObjectURL(blob);
-                    
+
                     deferred.resolve(blobUrl);
                 })
                 .error(function(err){
