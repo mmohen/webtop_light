@@ -97,7 +97,8 @@
             display_name: 'Display name',
             value: 'Value',
             check_in: 'Check In',
-            check_out:'Check Out'
+            check_out:'Check Out',
+            filter: 'Filter'
         });
 
         $translateProvider.translations('he', {

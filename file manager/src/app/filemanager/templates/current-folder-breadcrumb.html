@@ -17,4 +17,16 @@
             <i class="glyphicon glyphicon-level-up"></i>
         </button>
     </li>
+    <ul class="filter">
+        <li>
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon">                
+                    <i class="glyphicon glyphicon-filter"></i>
+                </span>
+                <input type="text" class="form-control input-sm" ng-show="config.searchForm" placeholder="{{'filter' | translate}}..." ng-model="$parent.query">
+              </div>
+            </div>
+        </li>        
+    </ul>
 </ol>
