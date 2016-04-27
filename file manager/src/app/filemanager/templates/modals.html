@@ -44,11 +44,11 @@
           <tbody>
             <tr ng-repeat="property in properties">
               <td>{{ property.displayName }} </td>
-              <td>{{ property.value }} </td>
+              <td class="properties-value" >{{ property.value }} </td>
             </tr>
           </tbody>
         </table>
-        <div class="text-center"> 
+        <div class="text-center">
           <span class="label label-warning" ng-show="apiMiddleware.apiHandler.inprocess">{{'loading' | translate}} ...</span>
         </div>
         <div ng-include data-src="'error-bar'" class="clearfix"></div>

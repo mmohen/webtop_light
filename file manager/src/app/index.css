@@ -122,3 +122,7 @@ section.jumbotron h1 {
 .filter li input {
   height: 23px;
 }
+
+.table tbody tr td.properties-value{
+   word-break: break-all;
+}
